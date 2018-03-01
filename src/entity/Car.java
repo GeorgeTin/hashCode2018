@@ -26,7 +26,9 @@ public class Car implements Comparable<Car>{
     @Override
     public int compareTo(Car o) {
         if(Utily.calculateDistance(o.getPosition(), CarDistribution.sortBy) < Utily.calculateDistance(this.getPosition(), CarDistribution.sortBy))
-            return 0;
+            return 1;
+        else
+            return -1;
     }
 
     public List<Integer> getRidesList() {
