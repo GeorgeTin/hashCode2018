@@ -60,4 +60,13 @@ public class Reader {
             e.printStackTrace();
         }
     }
+
+    public void printFile(Main main){
+
+        System.out.println("Sorted rides");
+
+        for (int i = 0; i < main.N; i ++){
+            System.out.println(main.rides.get(i));
+        }
+    }
 }

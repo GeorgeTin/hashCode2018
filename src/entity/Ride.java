@@ -14,7 +14,7 @@ public class Ride {
     private int latest;
     private int rideNumber;
 
-    public Ride(Position endPosition, Position startPoz, int earliest, int latest, int rideNumber) {
+    public Ride(Position startPoz, Position  endPosition, int earliest, int latest, int rideNumber) {
         this.endPosition = endPosition;
         this.startPoz = startPoz;
         this.earliest = earliest;
@@ -70,5 +70,11 @@ public class Ride {
 
     public void setLatest(int latest) {
         this.latest = latest;
+    }
+
+    @Override
+    public String toString() {
+        return this.startPoz.getX() + " " + this.startPoz.getY() + " " + this.endPosition.getX() + " " + this.endPosition.getY() + " " +
+                this.earliest + " " + this.latest;
     }
 }
