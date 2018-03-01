@@ -12,14 +12,24 @@ public class Ride {
     private long distance;
     private int earliest;
     private int latest;
+    private int rideNumber;
 
-    public Ride(Position endPosition, Position startPoz, int earliest, int latest) {
+    public Ride(Position endPosition, Position startPoz, int earliest, int latest, int rideNumber) {
         this.endPosition = endPosition;
         this.startPoz = startPoz;
         this.earliest = earliest;
         this.latest = latest;
+        this.rideNumber = rideNumber;
 
         this.distance = Utily.calculateDistance(startPoz, endPosition);
+    }
+
+    public int getRideNumber() {
+        return rideNumber;
+    }
+
+    public void setRideNumber(int rideNumber) {
+        this.rideNumber = rideNumber;
     }
 
     public long getDistance() {
