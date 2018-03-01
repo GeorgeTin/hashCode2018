@@ -17,6 +17,7 @@ public class Main {
 
         // Test for small input
         reader.readFile("a_example.in", main);
+        reader.printFile(main);
 
     }
 }
