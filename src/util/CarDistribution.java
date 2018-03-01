@@ -4,6 +4,7 @@ import entity.Car;
 import entity.Position;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -77,6 +78,15 @@ public class CarDistribution {
 
     }
 
-
+    public void sortCars(){
+        sortBy = centerZone3;
+        Collections.sort(carsNE);
+        sortBy = centerZone2;
+        Collections.sort(carsNV);
+        sortBy = centerZone1;
+        Collections.sort(carsSE);
+        sortBy = centerZone0;
+        Collections.sort(carsSV);
+    }
 
 }
