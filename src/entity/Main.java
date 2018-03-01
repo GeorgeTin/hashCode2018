@@ -52,6 +52,7 @@ public class Main {
         return theRide;
     }
 
+    // Test for each file
     public static void main(String[] args){
         Reader reader = new Reader();
         //Main main = new Main();
