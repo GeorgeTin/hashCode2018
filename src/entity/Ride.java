@@ -10,11 +10,11 @@ public class Ride {
     private Position startPoz;
     private Position endPosition;
     private long distance;
-    private int earliest;
-    private int latest;
+    private long earliest;
+    private long latest;
     private int rideNumber;
 
-    public Ride(Position startPoz, Position  endPosition, int earliest, int latest, int rideNumber) {
+    public Ride(Position startPoz, Position  endPosition, long earliest, long latest, int rideNumber) {
         this.endPosition = endPosition;
         this.startPoz = startPoz;
         this.earliest = earliest;
@@ -56,7 +56,7 @@ public class Ride {
         this.endPosition = endPosition;
     }
 
-    public int getEarliest() {
+    public long getEarliest() {
         return earliest;
     }
 
@@ -64,7 +64,7 @@ public class Ride {
         this.earliest = earliest;
     }
 
-    public int getLatest() {
+    public long getLatest() {
         return latest;
     }
 

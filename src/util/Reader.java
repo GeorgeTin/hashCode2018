@@ -16,7 +16,11 @@ class Sortbyroll implements Comparator<Ride>
     // Used for sorting
     public int compare(Ride a, Ride b)
     {
-        return a.getEarliest() - b.getEarliest();
+        if( a.getEarliest() - b.getEarliest() > 0){
+            return 1;
+        }else{
+            return -1;
+        }
     }
 }
 

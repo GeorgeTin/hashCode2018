@@ -4,6 +4,7 @@ import util.CarDistribution;
 import util.Timer;
 import util.Utily;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ public class Car implements Comparable<Car>{
     private boolean hasRide;
     private long availableTime;
     private int carNumber;
-    private List<Integer> ridesList;
+    private List<Integer> ridesList = new ArrayList<>();
 
     public Car(Position position, boolean hasRide, long availableTime, int carNumber) {
         this.position = position;
@@ -70,5 +71,19 @@ public class Car implements Comparable<Car>{
 
     public void setAvailableTime(long availableTime) {
         this.availableTime = availableTime;
+    }
+
+    public void assign(Ride ride) {
+        // Add ride in list
+        if (ride != null) {
+            this.ridesList.add(ride.getRideNumber());
+
+            // Update time
+            this.availableTime += Utily.calculateDistance(position, ride.getStartPoz());
+            this.availableTime += Utily.calculateDistance(ride.getEndPosition(), ride.getStartPoz());
+
+            // Update location
+            this.position = ride.getEndPosition();
+        }
     }
 }
