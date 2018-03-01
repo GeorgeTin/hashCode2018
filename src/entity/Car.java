@@ -1,6 +1,7 @@
 package entity;
 
 import util.CarDistribution;
+import util.Timer;
 import util.Utily;
 
 import java.util.List;
@@ -25,7 +26,7 @@ public class Car implements Comparable<Car>{
 
     @Override
     public int compareTo(Car o) {
-        if(Utily.calculateDistance(o.getPosition(), CarDistribution.sortBy) < Utily.calculateDistance(this.getPosition(), CarDistribution.sortBy))
+        if(Math.max(o.getAvailableTime(), Timer.getTIMER()) - Timer.getTIMER() + Utily.calculateDistance(o.getPosition(), CarDistribution.sortBy) < Math.max(this.getAvailableTime(), Timer.getTIMER()) - Timer.getTIMER() + Utily.calculateDistance(this.getPosition(), CarDistribution.sortBy))
             return 1;
         else
             return -1;
