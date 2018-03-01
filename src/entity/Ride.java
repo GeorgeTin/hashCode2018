@@ -1,4 +1,4 @@
-import javafx.geometry.Pos;
+package entity;
 
 /**
  * Created by Alexandra on 3/1/2018.
