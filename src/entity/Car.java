@@ -5,26 +5,16 @@ package entity;
  */
 public class Car {
 
-    private Position lastPosition;
-    private Position nextPosition;
+    private Position position;
     private boolean hasRide;
-    private int availableTime;
+    private long availableTime;
 
-
-    public Position getLastPosition() {
-        return lastPosition;
+    public Position getPosition() {
+        return position;
     }
 
-    public void setLastPosition(Position lastPosition) {
-        this.lastPosition = lastPosition;
-    }
-
-    public Position getNextPosition() {
-        return nextPosition;
-    }
-
-    public void setNextPosition(Position nextPosition) {
-        this.nextPosition = nextPosition;
+    public void setPosition(Position position) {
+        this.position = position;
     }
 
     public boolean isHasRide() {
@@ -35,11 +25,11 @@ public class Car {
         this.hasRide = hasRide;
     }
 
-    public int getAvailableTime() {
+    public long getAvailableTime() {
         return availableTime;
     }
 
-    public void setAvailableTime(int availableTime) {
+    public void setAvailableTime(long availableTime) {
         this.availableTime = availableTime;
     }
 }
