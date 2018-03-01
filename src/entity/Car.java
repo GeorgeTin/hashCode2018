@@ -13,6 +13,13 @@ public class Car {
     private int carNumber;
     private List<Integer> ridesList;
 
+    public Car(Position position, boolean hasRide, long availableTime, int carNumber) {
+        this.position = position;
+        this.hasRide = hasRide;
+        this.availableTime = availableTime;
+        this.carNumber = carNumber;
+    }
+
     public List<Integer> getRidesList() {
         return ridesList;
     }
