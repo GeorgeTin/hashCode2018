@@ -1,11 +1,14 @@
 package entity;
 
+import util.CarDistribution;
+import util.Utily;
+
 import java.util.List;
 
 /**
  * Created by Alexandra on 3/1/2018.
  */
-public class Car {
+public class Car implements Comparable<Car>{
 
     private Position position;
     private boolean hasRide;
@@ -18,6 +21,12 @@ public class Car {
         this.hasRide = hasRide;
         this.availableTime = availableTime;
         this.carNumber = carNumber;
+    }
+
+    @Override
+    public int compareTo(Car o) {
+        if(Utily.calculateDistance(o.getPosition(), CarDistribution.sortBy) < Utily.calculateDistance(this.getPosition(), CarDistribution.sortBy))
+            return 0;
     }
 
     public List<Integer> getRidesList() {

@@ -14,28 +14,26 @@ public class CarDistribution {
     //map coords
     private int X;
     private int Y;
+    private Position centerZone0;
+    private Position centerZone1;
+    private Position centerZone2;
+    private Position centerZone3;
 
     private List<Car> carsNE = new ArrayList<>();
     private List<Car> carsNV = new ArrayList<>();
     private List<Car> carsSE = new ArrayList<>();
     private List<Car> carsSV = new ArrayList<>();
 
+    public static Position sortBy;
 
-
-    public int getX() {
-        return X;
-    }
-
-    public void setX(int x) {
+    public CarDistribution(int x, int y) {
         X = x;
-    }
-
-    public int getY() {
-        return Y;
-    }
-
-    public void setY(int y) {
         Y = y;
+
+        this.centerZone0 = new Position(X/4, Y/4);
+        this.centerZone1 = new Position(X/4 * 3, Y/4);
+        this.centerZone2 = new Position(X/4 * 3, Y/4 * 3);
+        this.centerZone3 = new Position(X/4, Y/4 * 3);
     }
 
     public void addCar(Car car){
