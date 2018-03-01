@@ -16,7 +16,7 @@ public class Utily {
         else
             availableFrom = Timer.getTIMER();
 
-        long distCarToStartPoint = availableFrom + calculateDistance(car.getPosition(), ride.getStartPoz());
+        long distCarToStartPoint = Math.max(availableFrom, ride.getEarliest()) + calculateDistance(car.getPosition(), ride.getStartPoz());
 
         return distCarToStartPoint + ride.getDistance();
     }
